@@ -24,23 +24,11 @@ class AuthServiceImp extends AuthService {
   }) async {
 
     // showLoaderDialog();
-    //
-    // var body = {'phone': phoneNumb, 'password': password};
-    //
-    // var response =
-    //     await serviceHelpersImp.post(body: body, endPointUrl: '/auth/login');
-    //
+
+
     // globalPop();
-    //
-    // response.fold((left) => globalToast('Sorry, an error occurred'), (right) {
-    //   if (right.statusCode == 200) {
-    //     tempDatabaseImpl.saveUserToken(
-    //         token: right.data['data']['accessToken']);
-    //     globalToast(right.data['message']);
-    //     globalNavigateTo(route: Routes.domain);
-    //   }
-    // });
-    // return doesUserExist;
+
+    globalNavigateTo(route: Routes.domain);
   }
 
 }
