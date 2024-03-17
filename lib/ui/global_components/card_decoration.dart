@@ -15,7 +15,18 @@ BoxDecoration cardDecorationA() {
 
 BoxDecoration cardDecorationB() {
   return const BoxDecoration(
-    color: kWashedGreen,
+    color: kPrimaryB,
+    boxShadow: [
+      BoxShadow(
+          color: Color.fromRGBO(0, 0, 0, 0.029999999329447746),
+          offset: Offset(0, 4),
+          blurRadius: 30)
+    ],
+  );
+}
+BoxDecoration cardDecorationC() {
+  return const BoxDecoration(
+    color: kPrimaryC,
     boxShadow: [
       BoxShadow(
           color: Color.fromRGBO(0, 0, 0, 0.029999999329447746),

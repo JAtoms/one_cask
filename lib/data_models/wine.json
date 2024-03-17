@@ -1,0 +1,57 @@
+{
+  "data": {
+    "details": [
+      {
+        "type": "Distilery",
+        "value": "Cherinkova"
+      },
+      {
+        "type": "Region",
+        "value": "Moravian"
+      },
+      {
+        "type": "Country",
+        "value": "Czechia"
+      },
+      {
+        "type": "Type",
+        "value": "Classic"
+      },
+      {
+        "type": "Age statement",
+        "value": "5"
+      },
+      {
+        "type": "Filled",
+        "value": "50cl"
+      },
+      {
+        "type": "Bottled",
+        "value": "2024"
+      },
+      {
+        "type": "Cask number",
+        "value": "CA24532"
+      },
+      {
+        "type": "ABV",
+        "value": "MORAV345"
+      },
+      {
+        "type": "Size",
+        "value": "Large"
+      },
+      {
+        "type": "Finish",
+        "value": "No"
+      }
+    ],
+    "tasting_notes": {
+      "tasted_by": "Charles MacLean MBE",
+      "video_url": "adaddd",
+      "nose": "This is the classic ‘ahhh’ moment for most wine drinkers. While the wine may be completely dry, the finish has a note of softness and elegance to it.",
+      "palate": "This wine will taste more tart or bitter on the finish. It may have some green notes to it, but on a good quality wine, the acidity will tingle and persist, giving the wine a delicate, mouthwatering long finish.",
+      "finish": "The wine words ‘juicy’ and ‘fresh’ often indicate a wine that has a lot of just-ripe fruit flavors on the finish, usually found on young wines from moderate climates."
+    }
+  }
+}

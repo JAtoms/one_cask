@@ -15,7 +15,7 @@ class BottleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: cardDecorationB(),
+      decoration: cardDecorationA(),
       padding: EdgeInsets.all(spacingPadding2),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

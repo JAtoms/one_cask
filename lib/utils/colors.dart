@@ -5,6 +5,7 @@ const kSecondaryColor = Color(0xFFFFB901);
 const kPrimaryColor = Color(0xFF0E1C21);
 const kWashedGreen = Color(0xFF122329);
 const kPrimaryB = Color(0xFF0B1519);
+const kPrimaryC = Color(0xFF0E1C21);
 
 MaterialColor materialPrimaryColor() {
   Color color = kSecondaryColor;
