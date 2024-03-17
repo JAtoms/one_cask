@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:one_cask/ui/auth/auth_cubit.dart';
+import 'package:one_cask/ui/components/global_button.dart';
+import 'package:one_cask/ui/components/global_form_field.dart';
+import 'package:one_cask/utils/colors.dart';
+import 'package:one_cask/utils/dimensions.dart';
+import 'package:one_cask/utils/enumerations.dart';
+import 'package:one_cask/utils/global_extensions.dart';
+import 'package:one_cask/utils/helpers.dart';
+import 'package:one_cask/utils/text_styles.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -34,6 +42,7 @@ class _SignInScreenState extends State<SignInScreen> {
         builder: (context, state) {
           return Scaffold(
             resizeToAvoidBottomInset: false,
+            backgroundColor: kPrimaryColor,
             body: Stack(
               children: [
                 Form(
@@ -41,43 +50,72 @@ class _SignInScreenState extends State<SignInScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-
+                      globalGap(12),
+                      const BackButton(color: kWhite),
+                      Padding(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: spacingPadding4),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            globalGap(5),
+                            Text('Sign in',
+                                style: boldText(
+                                    fontSize: 30,
+                                    color: kWhite,
+                                    fontType: ebGaramond)),
+                            globalGap(10),
+                            GlobalFormField(
+                              textController: emailController,
+                              titleText: 'Email',
+                              hintText: 'Enter email address  ',
+                              keyBoardType: TextInputType.emailAddress,
+                              onChanged: (email) => context
+                                  .read<AuthCubit>()
+                                  .savePersonalInfo(email: email),
+                            ),
+                            globalGap(8),
+                            GlobalFormField(
+                              textController: passwordController,
+                              titleText: 'Password',
+                              hintText: 'Enter password',
+                              keyBoardType: TextInputType.visiblePassword,
+                              onChanged: (password) => context
+                                  .read<AuthCubit>()
+                                  .savePersonalInfo(password: password),
+                            ),
+                            globalGap(20),
+                            GlobalButton(
+                                btnText: 'Login',
+                                onTap: () {
+                                  if (_formKey.validate) {
+                                    context.read<AuthCubit>().login();
+                                  }
+                                }),
+                            globalGap(6),
+                            Center(
+                              child: RichText(
+                                textAlign: TextAlign.center,
+                                text: TextSpan(
+                                    text: 'Can’t sign in?          ',
+                                    style: regularText(
+                                        color: kWhite, fontSize: 16),
+                                    children: [
+                                      TextSpan(
+                                          text: 'Recover password',
+                                          style: regularText(
+                                              color: kSecondaryColor,
+                                              fontSize: 16,
+                                              fontType: ebGaramond)),
+                                    ]),
+                              ),
+                            )
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 ),
-                // Align(
-                //   alignment: Alignment.bottomCenter,
-                //   child: Padding(
-                //     padding: EdgeInsets.only(bottom: 10.heightAdjusted),
-                //     child: GestureDetector(
-                //       // onTap: () =>
-                //       //     globalNavigateTo(route: Routes.termsAndConditions),
-                //       child: Container(
-                //           margin: const EdgeInsets.only(top: 16),
-                //           child: RichText(
-                //             textAlign: TextAlign.center,
-                //             text: TextSpan(
-                //                 text: 'By continuing you agree to the ',
-                //                 style: regularText(
-                //                     color: kTextColor, fontSize: 12),
-                //                 children: [
-                //                   TextSpan(
-                //                       text: 'Privacy Terms & Conditions',
-                //                       style: regularText(
-                //                           color: kBlueColor, fontSize: 12)
-                //                           .copyWith(
-                //                           decoration:
-                //                           TextDecoration.underline)),
-                //                   TextSpan(
-                //                       text: ' without reservation.',
-                //                       style: regularText(
-                //                           color: kTextColor, fontSize: 12))
-                //                 ]),
-                //           )),
-                //     ),
-                //   ),
-                // ),
-                // globalGap(10)
               ],
             ),
           );

@@ -69,16 +69,14 @@ class _GlobalFormFieldState extends State<GlobalFormField> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (widget.titleText != null) ...[
-          Text(widget.titleText!, style: regularText()),
-          globalGap(1.5)
-        ],
+        Text(widget.titleText!, style: regularText(color: kSecondaryColor)),
+
         TextFormField(
           onChanged: widget.onChanged,
           focusNode: widget.focusNode,
           controller: widget.textController,
           obscureText: obscureText,
-          obscuringCharacter: '*',
+          obscuringCharacter: '•',
           maxLines: widget.maxLines,
           keyboardType: widget.keyBoardType,
           autofocus: widget.isAutoFocus,
@@ -94,7 +92,8 @@ class _GlobalFormFieldState extends State<GlobalFormField> {
                 if (widget.keyBoardType == TextInputType.name)
                   FilteringTextInputFormatter.deny(RegExp(r'\s')),
               ],
-          style: regularText(),
+          style: regularText(color: kWhite),
+          cursorColor: kSecondaryColor,
           decoration: InputDecoration(
             counterText: widget.counterText,
             prefixIcon: widget.prefixWidget ??
@@ -109,13 +108,15 @@ class _GlobalFormFieldState extends State<GlobalFormField> {
                 (TextInputType.visiblePassword == widget.keyBoardType
                     ? IconButton(
                         onPressed: () {
-                          setState(() {
-                            obscureText = !obscureText;
-                          });
+                          setState(() => obscureText = !obscureText);
                         },
                         icon: Icon(
-                          obscureText ? Icons.visibility_off : Icons.visibility,
-                          color:  obscureText ? Colors.grey.shade400 : kSecondaryColor,
+                          obscureText
+                              ? Icons.visibility_off_outlined
+                              : Icons.visibility_outlined,
+                          color: obscureText
+                              ? Colors.grey.shade400
+                              : kSecondaryColor,
                         ))
                     : widget.suffixIcon == null
                         ? null
@@ -125,25 +126,18 @@ class _GlobalFormFieldState extends State<GlobalFormField> {
                                 horizontal: 2.5.widthAdjusted),
                             child: SvgPicture.asset(widget.suffixIcon!))),
             hintText: widget.hintText,
-            hintStyle: regularText(color: Colors.black.withAlpha(130)),
-            contentPadding: EdgeInsets.symmetric(
-                vertical: 3.5.heightAdjusted, horizontal: 3.heightAdjusted),
+            hintStyle: regularText(color: kWhite.withAlpha(100)),
+            contentPadding: EdgeInsets.symmetric(vertical: 1.3.heightAdjusted),
             border: InputBorder.none,
             filled: widget.isFilled,
-            enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-                // borderSide:
-                //     BorderSide(color: widget.borderColor ?? kTextFieldStroke)
-            ),
-            focusedErrorBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-                borderSide: BorderSide(color: kPrimaryColor.withAlpha(100))),
-            errorBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-                borderSide: const BorderSide(color: Colors.red)),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
-              borderSide: BorderSide(color: kPrimaryColor.withAlpha(100)),
+            enabledBorder:  UnderlineInputBorder(
+                borderSide: BorderSide(color: kWhite.withAlpha(100))),
+            focusedErrorBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: Colors.red.withAlpha(150))),
+            errorBorder: const UnderlineInputBorder(
+                borderSide: BorderSide(color: Colors.red)),
+            focusedBorder: const UnderlineInputBorder(
+              borderSide: BorderSide(color: kSecondaryColor),
             ),
           ),
           validator: widget.validator ??

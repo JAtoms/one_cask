@@ -31,7 +31,7 @@ TextStyle boldText({Color? color, double fontSize = 16, FontType? fontType}) {
   return fontType != ebGaramond || fontType == null
       ? GoogleFonts.lato(
           color: color, fontWeight: FontWeight.bold, fontSize: fontSize)
-      : GoogleFonts.lato(
+      : GoogleFonts.ebGaramond(
           color: color, fontWeight: FontWeight.bold, fontSize: fontSize);
 }
 
@@ -40,6 +40,6 @@ TextStyle extraBoldText(
   return fontType != ebGaramond || fontType == null
       ? GoogleFonts.lato(
           color: color, fontWeight: FontWeight.w800, fontSize: fontSize)
-      : GoogleFonts.lato(
+      : GoogleFonts.ebGaramond(
           color: color, fontWeight: FontWeight.w800, fontSize: fontSize);
 }

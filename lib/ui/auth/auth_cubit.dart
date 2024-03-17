@@ -22,4 +22,16 @@ class AuthCubit extends Cubit<AuthState> {
 
   void login() async =>
       authServiceImp.login(phoneNumb: state.email, password: state.password);
+
+  void savePersonalInfo({
+    String? email,
+    String? password,
+  }) {
+    if (password != null) {
+      state.password = password;
+    } else if (email != null) {
+      state.email = email;
+    }
+    _emitState();
+  }
 }

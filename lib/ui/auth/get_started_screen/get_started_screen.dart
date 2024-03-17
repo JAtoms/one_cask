@@ -1,3 +1,5 @@
+import 'package:flutter/gestures.dart';
+import 'package:one_cask/dependency/navigation/navigator_routes.dart';
 import 'package:one_cask/ui/components/card_decoration.dart';
 import 'package:one_cask/ui/components/global_button.dart';
 import 'package:one_cask/utils/colors.dart';
@@ -7,7 +9,7 @@ import 'package:one_cask/utils/global_assets.dart';
 import 'package:one_cask/utils/helpers.dart';
 import 'package:one_cask/utils/text_styles.dart';
 
-import '../../dependency/navigation/global_router_exports.dart';
+import '../../../dependency/navigation/global_router_exports.dart';
 
 class GetStartedScreen extends StatelessWidget {
   const GetStartedScreen({super.key});
@@ -50,8 +52,13 @@ class GetStartedScreen extends StatelessWidget {
                           children: [
                             TextSpan(
                                 text: 'Sign in first',
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () => globalNavigateTo(
+                                      route: Routes.signInScreen),
                                 style: regularText(
-                                    color: kSecondaryColor, fontSize: 16)),
+                                    color: kSecondaryColor,
+                                    fontSize: 16,
+                                    fontType: ebGaramond)),
                           ]),
                     )
                   ],

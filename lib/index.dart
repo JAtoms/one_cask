@@ -9,6 +9,7 @@ import 'dependency/navigation/global_routes.dart';
 import 'dependency/navigation/navigation_service.dart';
 import 'ui/auth/auth_cubit.dart';
 import 'utils/size_config.dart';
+
 class Index extends StatefulWidget {
   const Index({super.key});
 
@@ -49,14 +50,17 @@ class _IndexState extends State<Index> {
               ],
               child: MaterialApp(
                   title: 'One Cask',
-                  theme: ThemeData(primarySwatch: materialPrimaryColor()),
+                  theme: ThemeData(
+                    primarySwatch: materialPrimaryColor(),
+                    colorScheme:
+                        ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+                    useMaterial3: true,
+                  ),
                   initialRoute: Routes.splashScreen,
                   navigatorKey:
                       getItInstance<NavigationServiceImpl>().navigationKey,
                   onGenerateRoute: (value) =>
-                      GlobalRouter.generateRoutes(value))
-
-          );
+                      GlobalRouter.generateRoutes(value)));
         });
       }),
     );
