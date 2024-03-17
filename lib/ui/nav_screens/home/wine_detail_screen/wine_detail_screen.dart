@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:one_cask/dependency/get_it.dart';
 import 'package:one_cask/dependency/navigation/global_router_exports.dart';
 import 'package:one_cask/ui/global_components/card_decoration.dart';
 import 'package:one_cask/ui/global_components/global_button.dart';
@@ -35,6 +36,10 @@ class _WineDetailScreenState extends State<WineDetailScreen> {
     super.initState();
   }
 
+  @override
+  void dispose() {
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(

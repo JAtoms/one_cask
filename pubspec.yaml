@@ -40,6 +40,9 @@ dependencies:
   # For connectivity
   internet_connection_checker: ^1.0.0+1
 
+  # Open settings
+  open_settings: ^2.0.2
+
   # Dear google fonts
   google_fonts: ^5.1.0
 
@@ -59,6 +62,7 @@ flutter:
   assets:
     - assets/svg/
     - assets/png/
+    - lib/data_models/wine.json
 
   
   

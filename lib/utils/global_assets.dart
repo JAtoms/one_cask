@@ -8,6 +8,7 @@ String bgnd2 = 'bgnd2'.png;
 String wine = 'wine'.png;
 String big_wine = 'big_wine'.png;
 String gear_icon = 'gear_icon'.png;
+String network_error = 'network_error'.png;
 
 // SVGs
 
