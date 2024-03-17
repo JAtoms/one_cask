@@ -17,3 +17,5 @@ String shop = 'shop'.svg;
 String settings = 'settings'.svg;
 String notificationBell = 'notificationBell'.svg;
 String chevron = 'chevron'.svg;
+String attachment = 'attachment'.svg;
+String timeline = 'timeline'.svg;

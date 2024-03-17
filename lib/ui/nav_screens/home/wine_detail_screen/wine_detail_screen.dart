@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:one_cask/dependency/navigation/global_router_exports.dart';
 import 'package:one_cask/ui/global_components/card_decoration.dart';
 import 'package:one_cask/ui/global_components/global_button.dart';
+import 'package:one_cask/ui/nav_screens/home/components/wine_history_widget.dart';
 import 'package:one_cask/ui/nav_screens/home/home_cubit.dart';
 import 'package:one_cask/utils/colors.dart';
 import 'package:one_cask/utils/dimensions.dart';
@@ -109,8 +110,7 @@ class _WineDetailScreenState extends State<WineDetailScreen> {
                                           tastingNotes:
                                               state.wineData!.tastingNotes),
                                     if (state.tabType == history)
-                                      WineDetailWidget(
-                                          details: state.wineData!.details),
+                                      const WineHistoryWidget(),
                                   ]
                                 ],
                               ),
@@ -120,7 +120,6 @@ class _WineDetailScreenState extends State<WineDetailScreen> {
                                 btnText: '+ Add to my collection'),
                             globalGap(4)
                           ],
-
                         ),
                       ),
                     ),
