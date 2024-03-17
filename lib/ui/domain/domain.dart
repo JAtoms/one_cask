@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:one_cask/ui/components/bottom_nav_widget.dart';
+import 'package:one_cask/ui/global_components/bottom_nav_widget.dart';
 import 'package:one_cask/ui/nav_screens/home/home.dart';
 
 final isBottomNavVisible = ValueNotifier(true);

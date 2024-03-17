@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:one_cask/dependency/navigation/navigator_routes.dart';
-import 'package:one_cask/ui/components/card_decoration.dart';
-import 'package:one_cask/ui/components/global_button.dart';
+import 'package:one_cask/ui/global_components/card_decoration.dart';
+import 'package:one_cask/ui/global_components/global_button.dart';
 import 'package:one_cask/utils/colors.dart';
 import 'package:one_cask/utils/dimensions.dart';
 import 'package:one_cask/utils/enumerations.dart';
@@ -20,7 +20,11 @@ class GetStartedScreen extends StatelessWidget {
       backgroundColor: kPrimaryB,
       body: Stack(
         children: [
-          Positioned.fill(child: Image.asset(bgnd)),
+          Positioned.fill(
+              child: Image.asset(
+            bgnd,
+            fit: BoxFit.cover,
+          )),
           Column(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.center,

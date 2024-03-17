@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:one_cask/ui/auth/auth_cubit.dart';
-import 'package:one_cask/ui/components/global_button.dart';
-import 'package:one_cask/ui/components/global_form_field.dart';
+import 'package:one_cask/ui/global_components/global_button.dart';
+import 'package:one_cask/ui/global_components/global_form_field.dart';
 import 'package:one_cask/utils/colors.dart';
 import 'package:one_cask/utils/dimensions.dart';
 import 'package:one_cask/utils/enumerations.dart';

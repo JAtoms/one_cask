@@ -7,6 +7,7 @@ class Routes {
   static const String getStartedScreen = '/getStarted';
   static const String signInScreen = '/signInScreen';
 
-  // Main
 
+  // Domain
+  static const String bottleDetailScreen = '/bottleDetailScreen';
 }

@@ -8,6 +8,7 @@ import 'dependency/navigation/global_router.dart';
 import 'dependency/navigation/global_routes.dart';
 import 'dependency/navigation/navigation_service.dart';
 import 'ui/auth/auth_cubit.dart';
+import 'ui/nav_screens/home/home_cubit.dart';
 import 'utils/size_config.dart';
 
 class Index extends StatefulWidget {
@@ -18,21 +19,6 @@ class Index extends StatefulWidget {
 }
 
 class _IndexState extends State<Index> {
-  // final AuthCubit _authCubit = getItInstance<AuthCubit>();
-  // final HomeCubit _homeCubit = getItInstance<HomeCubit>();
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    // _authCubit.close();
-    // _homeCubit.close();
-
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,14 +32,14 @@ class _IndexState extends State<Index> {
           return MultiBlocProvider(
               providers: [
                 BlocProvider.value(value: getItInstance<AuthCubit>()),
-                // BlocProvider.value(value: getItInstance<H>()),
+                BlocProvider.value(value: getItInstance<HomeCubit>()),
               ],
               child: MaterialApp(
                   title: 'One Cask',
                   theme: ThemeData(
                     primarySwatch: materialPrimaryColor(),
                     colorScheme:
-                        ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+                        ColorScheme.fromSeed(seedColor: kSecondaryColor),
                     useMaterial3: true,
                   ),
                   initialRoute: Routes.splashScreen,

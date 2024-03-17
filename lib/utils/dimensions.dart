@@ -28,6 +28,7 @@ final double spacingPadding30 = 30.heightAdjusted;
 final double spacingPadding40 = 40.heightAdjusted;
 final double spacingPadding60 = 60.heightAdjusted;
 
+final BorderRadius borderRadius1 = BorderRadius.circular(spacingPadding1);
 final BorderRadius borderRadius2 = BorderRadius.circular(spacingPadding2);
 final BorderRadius borderRadius3 = BorderRadius.circular(spacingPadding3);
 final BorderRadius borderRadius4 = BorderRadius.circular(spacingPadding4);

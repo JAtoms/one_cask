@@ -1,3 +1,4 @@
+import 'package:one_cask/ui/nav_screens/home/bottle_detail_screen/bottle_detail_screen.dart';
 
 import 'global_router_exports.dart';
 
@@ -21,6 +22,12 @@ class GlobalRouter {
       case Routes.signInScreen:
         return MaterialPageRoute(
             settings: settings, builder: (_) => const SignInScreen());
+
+      case Routes.bottleDetailScreen:
+        return MaterialPageRoute(
+            settings: settings,
+            builder: (_) =>
+                BottleDetailScreen(bottleTag: settings.arguments as int));
     }
   }
 }

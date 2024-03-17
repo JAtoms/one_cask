@@ -1,9 +1,6 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:one_cask/dependency/navigation/global_router_exports.dart';
-import 'package:one_cask/ui/components/card_decoration.dart';
+import 'package:one_cask/dependency/navigation/navigator_routes.dart';
 import 'package:one_cask/utils/colors.dart';
 import 'package:one_cask/utils/dimensions.dart';
 import 'package:one_cask/utils/enumerations.dart';
@@ -11,7 +8,7 @@ import 'package:one_cask/utils/global_assets.dart';
 import 'package:one_cask/utils/helpers.dart';
 import 'package:one_cask/utils/text_styles.dart';
 
-import 'home_cubit.dart';
+import 'components/bottle_widget.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -59,30 +56,10 @@ class _HomeState extends State<Home> {
                 padding: EdgeInsets.zero,
                 itemCount: 20,
                 itemBuilder: (context, index) {
-                  return Container(
-                    decoration: cardDecorationB(),
-                    height: spacingPadding20,
-                    padding: EdgeInsets.all(spacingPadding2),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Center(child: Image.asset(wine)),
-                        globalGap(2),
-                        Text('Springbank',
-                            style: mediumText(
-                                fontSize: 20,
-                                color: Colors.white,
-                                fontType: ebGaramond)),
-                        Text('1992 #1234 ',
-                            style: mediumText(
-                                fontSize: 20,
-                                color: Colors.white,
-                                fontType: ebGaramond)),
-                        Text('(112/158) ',
-                            style:
-                                regularText(fontSize: 12, color: Colors.white)),
-                      ],
-                    ),
+                  return GestureDetector(
+                    onTap: () => globalNavigateTo(
+                        route: Routes.bottleDetailScreen, arguments: index),
+                    child: BottleWidget(bottleTag: index),
                   );
                 },
               ),
