@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 const kWhite = Colors.white;
-const kSecondary = Color(0xFFFFB901);
+const kSecondaryColor = Color(0xFFFFB901);
 const kPrimaryColor = Color(0xFF0E1C21);
+const kWashedGreen = Color(0xFF122329);
+const kPrimaryB = Color(0xFF0B1519);
 
 MaterialColor materialPrimaryColor() {
-  Color color = kSecondary;
+  Color color = kSecondaryColor;
   List strengths = <double>[.05];
   Map<int, Color> swatch = {};
   final int r = color.red,

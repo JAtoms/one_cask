@@ -9,9 +9,9 @@ extension CustomContext on BuildContext {
 }
 
 extension StringExtensions on String {
-  String get svg => 'assets/images/svg/$this.svg';
+  String get svg => 'assets/svg/$this.svg';
 
-  String get png => 'assets/images/png/$this.png';
+  String get png => 'assets/png/$this.png';
 
   String get lottie => 'assets/lottie/$this.json';
 

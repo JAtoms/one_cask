@@ -1,26 +1,45 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-TextStyle regularText({Color? color, double fontSize = 14}) {
-  return GoogleFonts.lato(color: color, fontSize: fontSize);
+import 'enumerations.dart';
+
+TextStyle regularText(
+    {Color? color, double fontSize = 14, FontType? fontType}) {
+  return fontType != ebGaramond || fontType == null
+      ? GoogleFonts.lato(color: color, fontSize: fontSize)
+      : GoogleFonts.ebGaramond(color: color, fontSize: fontSize);
 }
 
-TextStyle mediumText({Color? color, double fontSize = 16}) {
-  return GoogleFonts.lato(
-      color: color, fontWeight: FontWeight.w500, fontSize: fontSize);
+TextStyle mediumText({Color? color, double fontSize = 16, FontType? fontType}) {
+  return fontType != ebGaramond || fontType == null
+      ? GoogleFonts.lato(
+          color: color, fontWeight: FontWeight.w500, fontSize: fontSize)
+      : GoogleFonts.ebGaramond(
+          color: color, fontWeight: FontWeight.w500, fontSize: fontSize);
 }
 
-TextStyle semiBoldText({Color? color, double fontSize = 16}) {
-  return GoogleFonts.lato(
-      color: color, fontWeight: FontWeight.w600, fontSize: fontSize);
+TextStyle semiBoldText(
+    {Color? color, double fontSize = 16, FontType? fontType}) {
+  return fontType != ebGaramond || fontType == null
+      ? GoogleFonts.lato(
+          color: color, fontWeight: FontWeight.w600, fontSize: fontSize)
+      : GoogleFonts.ebGaramond(
+          color: color, fontWeight: FontWeight.w600, fontSize: fontSize);
 }
 
-TextStyle boldText({Color? color, double fontSize = 16}) {
-  return GoogleFonts.lato(
-      color: color, fontWeight: FontWeight.bold, fontSize: fontSize);
+TextStyle boldText({Color? color, double fontSize = 16, FontType? fontType}) {
+  return fontType != ebGaramond || fontType == null
+      ? GoogleFonts.lato(
+          color: color, fontWeight: FontWeight.bold, fontSize: fontSize)
+      : GoogleFonts.lato(
+          color: color, fontWeight: FontWeight.bold, fontSize: fontSize);
 }
 
-TextStyle extraBoldText({Color? color, double fontSize = 16}) {
-  return GoogleFonts.lato(
-      color: color, fontWeight: FontWeight.w800, fontSize: fontSize);
+TextStyle extraBoldText(
+    {Color? color, double fontSize = 16, FontType? fontType}) {
+  return fontType != ebGaramond || fontType == null
+      ? GoogleFonts.lato(
+          color: color, fontWeight: FontWeight.w800, fontSize: fontSize)
+      : GoogleFonts.lato(
+          color: color, fontWeight: FontWeight.w800, fontSize: fontSize);
 }

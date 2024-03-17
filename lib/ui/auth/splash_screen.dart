@@ -1,6 +1,6 @@
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:one_cask/dependency/navigation/global_router_exports.dart';
 import 'package:one_cask/dependency/navigation/navigator_routes.dart';
+import 'package:one_cask/utils/colors.dart';
 import 'package:one_cask/utils/dimensions.dart';
 import 'package:one_cask/utils/global_assets.dart';
 
@@ -17,8 +17,8 @@ class _SplashScreenState extends State<SplashScreen>
   late Animation<double> _fadeInEdenAnimatedLogoOut;
 
   void afterSplash() async {
-    await Future.delayed(const Duration(milliseconds: 1200),
-        () async => globalNavigateTo(route: Routes.getStarted));
+    await Future.delayed(const Duration(seconds: 4),
+        () async => globalNavigateTo(route: Routes.getStartedScreen));
   }
 
   @override
@@ -27,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen>
 
     animation = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 750),
+      duration: const Duration(seconds: 2),
     );
 
     _fadeInEdenAnimatedLogoOut =
@@ -54,16 +54,17 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kPrimaryB,
       body: Stack(
         children: [
-          Positioned.fill(child: SvgPicture.asset(one_cask_logo)),
+          Positioned.fill(child: Image.asset(bgnd)),
           Center(
             child: FadeTransition(
               opacity: _fadeInEdenAnimatedLogoOut,
               child: Center(
-                child: SvgPicture.asset(
-                  bgnd,
-                  height: spacingPadding6,
+                child: Image.asset(
+                  one_cask_logo,
+                  height: spacingPadding20,
                 ),
               ),
             ),
